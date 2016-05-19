@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            header {
+                text-align: center;
+                background-color: rgba(252,252,252,.8);
+                margin-top:20px;
+                margin-bottom:20px;
+                margin-left:10px;
+                margin-right:50px;
+                width:250px;
+                font-family:'Futura';
+                float: right;
+                position: fixed;
+                top: 80px;
+                right: 0;
+                width: 300px;
+                height: 420px;
+                border-top-left-radius:25px;
+                border-top-right-radius:25px;
+                border-bottom-right-radius:25px;
+                border-bottom-left-radius:25px;
+            }
+            
+            #background-image {
+                background-image: url(http://studioghiblimovies.com/images/mf.jpg);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+            }
+            
+            .description {
+                font-size:9pt;
+            }
+            
+            #profile-image {
+                border-radius:200px;
+                padding:20px;
+                margin-top:20px;
+
+            }
+            
+            #images {
+               width:445px;
+               margin:20px;
+            }
+            
+            section {
+            }
+            
+            article {
+                display:block;
+                width: 550px;
+                background-color:rgba(252,252,252,.8);
+                margin-top:10px;
+                margin-bottom:10px;
+                margin-left:100px;
+                margin-right:20px;
+                border-top-left-radius:25px;
+                border-top-right-radius:25px;
+                border-bottom-right-radius:25px;
+                border-bottom-left-radius:25px;
+                padding:5px;
+            }
+            article:hover {
+                box-shadow: 6px 6px 2px #FFFFFF;
+            }
+            p {
+                padding-left:20px;
+                padding-right:20px;
+                padding-bottom:10px;
+                font-family:sans-serif;
+                font-size:10pt;
+            }
+            h3 {
+                font-family:'Futura';
+                font-size:15pt;
+                padding-left:20px;
+                padding-right:20px;
+            }
+            .topul {
+                list-style:none;
+                margin:0px;
+                padding:0px;
+                line-height:1.8;
+            }
+            .social-media li {
+                display: inline-block;
+            }
+            a:link {
+                color: black;
+                text-decoration: none;
+            }
+            a:hover {
+                color: white;
+                text-decoration: none;
+            }
+            a:visited {
+                color: gray;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    
+    <body id="background-image">
+        <header>
+            <img src="{PortraitURL-128}" id="profile-image">
+            <h1>{Title}</h1>
+            <h3 class="description">{Description}</h3>
+            <ul class="topul">
+                <li><a href="michellehosogaides117.tumblr.com">MAIN</a></li>
+                <li><a href="michellehosogaides117.tumblr.com/ask">ASK</a></li>
+                <li><a href="michellehosogaides117.tumblr.com/archive">ARCHIVE</a></li>
+            </ul>
+        </header>
+        <section>
+            {block:Posts}
+                {block:Text}
+                    <article>
+                        <h3>{Title}</h3>
+                        <p>{Body}</p>
+                    
+                     <p>{block:Date} {Month} {DayOfMonth} {year} {/block:Date}</p>
+                    <ul class="social-media">
+                        <li>{LikeButton color="black"}</li>
+                        <li>{ReblogButton color="black"}</li>
+                    </ul>
+                    </article>
+                {/block:Text}
+                
+                {block:Photo}
+                    <article>
+                        <p><img src="{PhotoURL-HighRes}" id="images"></p>
+                        {caption}
+                    
+                      <p>{block:Date} {Month} {DayOfMonth} {year} {/block:Date}</p>
+                    <ul class="social-media">
+                        <li>{LikeButton color="black"}</li>
+                        <li>{ReblogButton color="black"}</li>
+                    </ul>
+                    </article>
+                {/block:Photo}
+                   
+            {/block:Posts}
+        </section>
+    </body>
+</html>
